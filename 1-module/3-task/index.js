@@ -7,7 +7,6 @@ function ucFirst(string){
   let firstLetter = string[0].toUpperCase();
   //откидываем первую букву
   let endString = string.slice(1);
-  //соединяем изменённую первую букву с значение без первой буквы
-  let newString = firstLetter + endString
-  return newString
+  //возвращаем соединённую изменённую первую букву с значение без первой буквы  
+  return `${firstLetter}${endString}`
 }

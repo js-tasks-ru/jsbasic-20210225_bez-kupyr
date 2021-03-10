@@ -1,7 +1,7 @@
 /**
  /* Эту функцию трогать не нужно
  */
-function print(text) {
+ function print(text) {
   console.log(text);
 }
 
@@ -10,27 +10,22 @@ function print(text) {
  * чтобы функция sayHello работала корректно
  */
 function isValid(name) {
-  // если нажата отмена или esc
+  /*// если нажата отмена или esc
   if(name === null){
     print('возвращайтесь, как будете готовы');
     return false
   }
-  //пустая строка
-  else if(name.length === 0){
-    print('вы ничего не ввели');
-    return false
-  }
   //если использованы пробелы
-  else if(name.indexOf(' ') != -1){
+  else if(name.includes(' ')){
     print('пробелов быть не должно');
     return false
   }
   //недостаточное количество символов
-  else if(name.length > 0 && name.length < 4){
+  else if(name.length < 4){
     print('слишком короткое имя');
     return false
-  }
-  return true
+  }*/
+  return !(name === null || name.includes(' ') || name.length < 4);  
 }
 
 function sayHello() {

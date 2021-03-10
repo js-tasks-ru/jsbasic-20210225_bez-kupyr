@@ -1,23 +1,21 @@
-function factorial(n) {
-  //определение типа для валидации
-  let num = typeof(n);
+function factorial(value) {
   //проверка на числовое значение
   //как проверить на ввод спец.символов пока решил оставить...прочитал что с помощью регулярных выражений
-  if(num !== 'number'){
+  /*if(typeof(value) !== 'number'){
     console.log('Введите числовое значение');
     return
-  };
+  };*/
   //при факториалах 0 и 1 возвращаем 1
-  if(n === 0 || n === 1){
+  if(value === 0 || value === 1){
     return 1
   };
-  //значение на которое уменьшается факториал для вычисления
-  let j = n - 1;
-  //значение на которое умножается факториал для вычисления
-  let a = n * j;
-  while( j > 1 ){
-    j--;
-    a = a * j;    
+  //значение  - 1
+  let valueMinusOne = value - 1;
+  //значение * (значение  - 1)
+  let valueMultiplication = value * valueMinusOne;
+  while( valueMinusOne > 1 ){
+    valueMinusOne--;
+    valueMultiplication = valueMultiplication * valueMinusOne;    
   };
-  return a
+  return valueMultiplication
 };
