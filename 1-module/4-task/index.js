@@ -8,9 +8,5 @@ function checkSpam(string){
   const SECOND_VALUE = 'XXX'.toLowerCase(); 
   //введённые значения приводим к нижнеу регистру
   let textInLowerCase = string.toLowerCase();
-  /*if(toSmallText.indexOf(FIRST_VALUE) != -1 || toSmallText.indexOf(SECOND_VALUE) != -1){
-    return true;
-  }*/
-  return textInLowerCase.includes(FIRST_VALUE) || textInLowerCase.includes(SECOND_VALUE)
-  return false;   
+  return textInLowerCase.includes(FIRST_VALUE) || textInLowerCase.includes(SECOND_VALUE);
 }

@@ -4,9 +4,9 @@ function ucFirst(string){
     return ""
   }
   //меняем регистр первуй буквы
-  let firstLetter = string[0].toUpperCase();
+  const firstLetter = string[0].toUpperCase();
   //откидываем первую букву
-  let endString = string.slice(1);
+  const endString = string.slice(1);
   //возвращаем соединённую изменённую первую букву с значение без первой буквы  
   return `${firstLetter}${endString}`
 }

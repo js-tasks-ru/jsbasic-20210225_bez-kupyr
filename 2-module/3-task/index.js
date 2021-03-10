@@ -1,16 +1,17 @@
-function read(a, b) {
-  this.a = a;
-  this.b = b;
+function read(firstOperand, secondOperand) {
+  this.firstOperand = firstOperand;
+  this.secondOperand = secondOperand;
 };
 function sum(){
-   return this.a + this.b;
+   return this.firstOperand + this.secondOperand;
 };
 function mul(){
-  return this.a * this.b;
+  return this.firstOperand * this.secondOperand;
 };
   
 let calculator = {
-  // ваш код  
+  firstOperand: null,
+  secondOperand: null,
 };
 calculator.read = read;
 calculator.sum = sum;
