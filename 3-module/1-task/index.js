@@ -1,8 +1,5 @@
 function namify(users) {
-  //новый ассив куда будем складывать иена пользователей
-  let nameUsers = []; 
-    users.forEach(item => {
-    nameUsers.push(item.name)
-  });
+  //новый массив куда будем складывать имена пользователей
+  let nameUsers = users.map(item => item.name);
   return nameUsers;
 }
