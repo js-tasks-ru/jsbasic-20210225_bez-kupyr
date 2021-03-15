@@ -2,10 +2,10 @@ function read(firstOperand, secondOperand) {
   this.firstOperand = firstOperand;
   this.secondOperand = secondOperand;
 };
-function sum(){
+function sumOfNumbers(){
    return this.firstOperand + this.secondOperand;
 };
-function mul(){
+function mulOfNumbers(){
   return this.firstOperand * this.secondOperand;
 };
   
@@ -14,8 +14,8 @@ let calculator = {
   secondOperand: null,
 };
 calculator.read = read;
-calculator.sum = sum;
-calculator.mul = mul;
+calculator.sum = sumOfNumbers;
+calculator.mul = mulOfNumbers;
 calculator.read(3, 5);
 
 // НЕ УДАЛЯТЬ СТРОКУ, НУЖНА ДЛЯ ПРОВЕРКИ
