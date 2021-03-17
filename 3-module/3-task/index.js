@@ -1,20 +1,9 @@
 function camelize(str) {
-  let newArrayWords = [];
-  const arrayWords = str.split("-");
-  console.log(arrayWords)
-  arrayWords.forEach((word,index) => {    
+  let arrayWords = str.split("-").map((word,index) => {
     if(index !=0){
-      let newArrayLetters = [];
-      const arrayLetters = word.split("");
-      arrayLetters.forEach((letter,index) => {
-        if(index === 0){
-          letter = letter.toUpperCase();
-        }        
-        newArrayLetters.push(letter);
-      })
-      word = newArrayLetters.join("");
+    return word[0].toUpperCase() + word.slice(1);
     }
-    newArrayWords.push(word);
-  })
-  return newArrayWords.join("");;  
+    return word;
+  }).join('');
+  return arrayWords;
 }

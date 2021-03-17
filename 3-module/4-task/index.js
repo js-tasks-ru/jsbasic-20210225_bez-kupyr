@@ -1,16 +1,7 @@
 function showSalary(users, age) {
-  let favoritesList = "";
-  let favoritesArray = [];
-  users.forEach( user => {
-    if(user.age <= age){
-      favoritesArray.push(user);
-    }
-  })  
-  favoritesArray.forEach( (chosen, index) => {
-    favoritesList+=`${chosen.name}, ${chosen.balance}`;
-      if(index != favoritesArray.length-1){
-        favoritesList+="\n";
-      }
-  })     
+  let favoritesArray = users.filter( user => user.age <= age )
+  let favoritesList = favoritesArray.map( (chosen, index) => {
+    return `${chosen.name}, ${chosen.balance}`;
+  }).join("\n");    
   return favoritesList;
 }
