@@ -1,9 +1,3 @@
 function camelize(str) {
-  let arrayWords = str.split("-").map((word,index) => {
-    if(index !=0){
-    return word[0].toUpperCase() + word.slice(1);
-    }
-    return word;
-  }).join('');
-  return arrayWords;
+  return  str.split("-").map((word,index) => index !=0 ? word[0].toUpperCase() + word.slice(1) : word).join('');   
 }
