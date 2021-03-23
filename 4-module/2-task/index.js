@@ -1,13 +1,10 @@
 function makeDiagonalRed(table) {  
-  let trCollections = table.rows;
-  let indexTd = 0;
-  for (let tr of trCollections){         
-    let tdColletions = tr.cells;
-    for (let td of tdColletions){
-      if(td.cellIndex === indexTd){
-        td.style.background = "red";
-      }            
+  let trCollections = table.rows;  
+  for(let i = 0; i < trCollections.length; i++){
+    console.log(trCollections[i])
+    let tdCollections = trCollections[i].cells;
+    if(tdCollections[i].cellIndex === i){
+      tdCollections[i].style.background = "red";        
     }
-    indexTd++; 
-  }  
+  }
 }
