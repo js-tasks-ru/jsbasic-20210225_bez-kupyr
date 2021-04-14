@@ -3,8 +3,9 @@ export default class UserTable {
   constructor(rows) {
     this.rows = rows;
     this.elem = this.render();
-    this.removeUsers = this.removeUsers();
+    
   }
+  
   getTemplateThead(){
     return `<thead>
       <tr>
@@ -30,8 +31,8 @@ export default class UserTable {
   }
 
   removeUsers(){
-    let users = [...document.querySelectorAll(".users")];
-    console.log(1);
+    let users = [...table.querySelectorAll(".users")];
+    console.log(users);
     users.forEach(user => {
       const removeButton = user.querySelector(".remove-button");
       const removeUser = () => {
@@ -46,16 +47,12 @@ export default class UserTable {
     let table = document.createElement('table');
     table.innerHTML = this.getTemplateThead();
     let tbody = document.createElement('tbody');
-
+    console.log(table);
     for(let user of this.rows){
       tbody.insertAdjacentHTML("beforeend",this.getTemplateTr(user));  
     }
     table.appendChild(tbody);
-    console.log(table);
-    //document.body.appendChild(table);
-    //let users = [...document.querySelectorAll(".users")];  
-    this.removeUsers(this.users);
-    //console.log(users);
+    //this.removeUsers();
     return table;    
   }
 }
