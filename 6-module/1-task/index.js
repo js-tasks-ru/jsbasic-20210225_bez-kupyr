@@ -3,6 +3,7 @@ export default class UserTable {
   constructor(rows) {
     this.rows = rows;
     this.elem = this.render();
+    //this.removeUsers = this.removeUsers();
     
   }
   
@@ -30,18 +31,18 @@ export default class UserTable {
     `
   }
 
-  removeUsers(){
-    let users = [...table.querySelectorAll(".users")];
-    console.log(users);
-    users.forEach(user => {
-      const removeButton = user.querySelector(".remove-button");
-      const removeUser = () => {
-        user.remove();
-        removeButton.removeEventListener('click',removeUser);
-      }
-      removeButton.addEventListener('click',removeUser);
-    })
-  }
+  // removeUsers(){
+  //   let users = [...document.querySelectorAll(".users")];
+  //   console.log(users);
+  //   users.forEach(user => {
+  //     const removeButton = user.querySelector(".remove-button");
+  //     const removeUser = () => {
+  //       user.remove();
+  //       removeButton.removeEventListener('click',removeUser);
+  //     }
+  //     removeButton.addEventListener('click',removeUser);
+  //   })
+  // }
   
   render(){
     let table = document.createElement('table');
@@ -52,7 +53,16 @@ export default class UserTable {
       tbody.insertAdjacentHTML("beforeend",this.getTemplateTr(user));  
     }
     table.appendChild(tbody);
-    //this.removeUsers();
+    let users = [...table.querySelectorAll(".users")];    
+    console.log(users);
+    users.forEach(user => {
+      const removeButton = user.querySelector(".remove-button");
+      const removeUser = () => {
+        user.remove();
+        removeButton.removeEventListener('click',removeUser);
+      }
+      removeButton.addEventListener('click',removeUser);
+    })
     return table;    
   }
 }
