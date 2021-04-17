@@ -29,7 +29,7 @@ export default class UserTable {
     `
   }
 
-  removeUsers(table){
+  createEventRemoveUsers(table){
     let users = [...table.querySelectorAll(".users")];
     console.log(users);
     users.forEach(user => {
@@ -51,7 +51,7 @@ export default class UserTable {
       tbody.insertAdjacentHTML("beforeend",this.getTemplateTr(user));  
     }
     table.appendChild(tbody);    
-    this.removeUsers(table);
+    this.createEventRemoveUsers(table);
     return table;    
   }
 }
