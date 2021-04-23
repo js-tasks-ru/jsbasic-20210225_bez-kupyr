@@ -36,9 +36,9 @@ export default class UserTable {
       const removeButton = user.querySelector(".remove-button");
       const removeUser = () => {
         user.remove();
-        removeButton.removeEventListener('click',removeUser);
+        //removeButton.removeEventListener('click',removeUser);
       }
-      removeButton.addEventListener('click',removeUser);
+      removeButton.addEventListener('click',removeUser,{once:true});
     })
   }
   
