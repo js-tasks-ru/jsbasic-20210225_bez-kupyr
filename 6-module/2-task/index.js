@@ -10,7 +10,7 @@ export default class ProductCard {
     const{name,price,image} = this.product;     
     return `<div class="card__top" id="4">
           <img src="/assets/images/products/${image}" class="card__image" alt="product">
-          <span class="card__price" id="1">€${price}</span>
+          <span class="card__price" id="1">€${price.toFixed(2)}</span>
       </div>
       <div class="card__body">
           <div class="card__title">${name}</div>
@@ -19,18 +19,20 @@ export default class ProductCard {
           </button>
       </div>`
   }
+  _createEventproductAdd = button =>{
+    const{id} = this.product;
+    const event = new CustomEvent('product-add', {detail: id,bubbles:true});       
+    button.dispatchEvent(event);
+    
+  }
+  
 
   render(){
-    const{id} = this.product;
     const elem = document.createElement("div");
     elem.classList.add("card");
     elem.innerHTML = this.getTemplateCard();
-    elem.id = id;    
-    const button = elem.querySelector('.card__button');
-    button.onclick = function(){
-      const event = new CustomEvent('product-add', {detail: elem.id,bubbles: true });    
-      button.dispatchEvent(event);
-    }    
+    let button = elem.querySelector('.card__button');
+    button.onclick = () => this._createEventproductAdd(button);  
     elem.addEventListener('product-add', e => console.log(e.detail));
     return elem;       
   }

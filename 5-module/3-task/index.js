@@ -8,7 +8,7 @@ function initCarousel() {
   buttonRight.onclick = goRight;  
   buttonLeft.onclick = goLeft;  
   function goRight (){
-    counter++;          
+    counter++;
     elementInner.style.transform = 'translateX(-' + offsetWidthElement * counter + 'px)';    
     showCarouselArrow (counter);    
   }
